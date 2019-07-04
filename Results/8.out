@@ -1,0 +1,4 @@
+Error at line 1: 
+function main(){
+Main function can't have parameter(s)
+java.lang.RuntimeException

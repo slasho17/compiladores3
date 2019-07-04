@@ -1,0 +1,4 @@
+Error at line 2: 
+  2 + 2 = 3 * 3;
+Variable expected in assignment
+java.lang.RuntimeException

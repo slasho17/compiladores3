@@ -1,0 +1,5 @@
+soma
+Error at line 5: 
+function soma{
+identifier soma already exists
+java.lang.RuntimeException

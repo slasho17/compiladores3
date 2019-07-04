@@ -1,0 +1,4 @@
+Error at line 4: 
+  var if:String;
+Identifier expected
+java.lang.RuntimeException

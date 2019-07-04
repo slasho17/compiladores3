@@ -1,0 +1,4 @@
+Error at line 2: 
+  fatorial(1,2);
+function fatorial was not declared
+java.lang.RuntimeException

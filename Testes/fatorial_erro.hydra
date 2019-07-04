@@ -1,0 +1,9 @@
+
+function fatorial(n : Int) -> Int {
+	if n <= 0 {
+			} else {
+	}
+}
+function main{
+	
+}

@@ -1,0 +1,7 @@
+#include<stdio.h>
+#include<string.h>
+void main( )
+{
+Int x;
+Int y;
+}

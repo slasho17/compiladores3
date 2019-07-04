@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<string.h>
+void main( )
+{
+Int num;
+String texto;
+scanf("%d\n", &num); 
+gets(texto);
+}

@@ -1,0 +1,4 @@
+Error at line 10: 
+  2 = div();
+Variable expected in assignment
+java.lang.RuntimeException

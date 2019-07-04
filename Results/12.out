@@ -1,0 +1,5 @@
+mult
+Error at line 5: 
+  return "Funcao de multiplicacao";
+Incompatible return type in function mult
+java.lang.RuntimeException

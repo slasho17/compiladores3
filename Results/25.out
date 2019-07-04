@@ -1,0 +1,29 @@
+recebeDado
+aqiu caraip{
+#include<stdio.h>
+#include<string.h>
+Int recebeDado( )
+{
+Int num;
+Int numDois;
+String texto;
+scanf("%d\n", &num); 
+scanf("%d\n", &numDois); 
+gets(texto);
+puts(texto);
+return (num * numDois);
+}
+void main( )
+{
+Int result;
+Boolean logico;
+logico = 0;
+while(logico) {
+result = recebeDado(;
+printf("%d\n", result);
+if((result == 0)) {
+logico = 0;
+}
+}
+puts("teste sem erro");
+}

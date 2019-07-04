@@ -1,0 +1,4 @@
+Error at line 1: 
+function main -> Boolean{
+Main function can't return any value
+java.lang.RuntimeException

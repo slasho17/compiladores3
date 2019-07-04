@@ -1,0 +1,29 @@
+aqiu caraip{
+fatorial
+fatorial
+#include<stdio.h>
+#include<string.h>
+Int fatorial( Int n)
+{
+if((n <= 0)) {
+return 1;
+}
+else
+{
+return (n * fatorial((n - 1));
+}
+}
+void imprima( Int before, Int valor, String after)
+{
+Int i;
+i = 0;
+while((i < before)) {
+printf("%s", "*");
+i = (i + 1);
+}
+puts("");
+printf("%d\n", valor);
+puts(after);
+}
+void main( )
+{
