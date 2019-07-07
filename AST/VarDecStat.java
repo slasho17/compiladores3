@@ -26,6 +26,12 @@ public class VarDecStat extends Statement{
     public void genC(PW pw){
         pw.print(varDecStat.getType().getCname());
         pw.out.print(" ");
-        pw.out.println(varDecStat.getId() + ";");
+        pw.out.print(varDecStat.getId());
+        // Se for do tipo string, precisa do '[]' depois do id da variavel
+        // Pois string eh um vetor de char
+        if (varDecStat.getType().getTypeName().equals("String")) {
+            pw.out.print("[10000]"); //gambiarraaaaa
+        }
+        pw.out.println(";");
     }
 }
