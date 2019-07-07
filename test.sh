@@ -7,9 +7,9 @@ rm Results/*.out
 
 for i in {1..25}
 do
-	java Main Testes/$i.in > Testes/Results/$i.out
+	java Main Testes/$i.in Testes/Results/$i.c
 	echo ================== TESTE $i =======================
-	cat  Testes/Results/$i.out
+	cat  Testes/Results/$i.c
 	echo ===================================================
 	echo
 	echo

@@ -97,6 +97,6 @@ function main{
 	calc(maiorIgual(resultadoM, 10));
 	texto = mensagem("ola");
 	mensagens("Cuidado", "Pode ir");
-	comparador("Permitido", portaAnd(true, true));
+	comparador("Permitido", portaAnd(true, false));
 	loopInfinito();
 }

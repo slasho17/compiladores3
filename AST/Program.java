@@ -33,8 +33,16 @@ public class Program{
 			for(Function f : this.arrayFunction){
 				if(f.getType() == null)
 					pw.out.print("void " + f.getId() + "(" );
-				else
-					pw.out.print(f.getType().getCname() + " " + f.getId() + "(" );
+				else {
+					pw.out.print(f.getType().getCname());
+					// Coloca * dps do char para retornar string
+					if (f.getType().getTypeName().equals("String")) {
+						pw.out.print("*");
+					} 
+					
+					pw.out.print(" " + f.getId() + "(" );
+
+				}
 				
 				
 				p = f.getParamList();
@@ -45,8 +53,13 @@ public class Program{
 	
 						if( length != 0){
 							
-							pw.out.print(p.access(i).getType().getCname() + " "+ p.access(i).getId());
-	
+							pw.out.print(p.access(i).getType().getCname() + " " + p.access(i).getId());
+							
+							// Coloca [] dps do parametro para receber string
+							if (p.access(i).getType().getTypeName().equals("String")) {
+								pw.out.print("[]");
+							}
+
 							if( i != p.size() - 1){
 								pw.out.print(", ");
 							}
