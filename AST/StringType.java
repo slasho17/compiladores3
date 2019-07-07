@@ -13,5 +13,5 @@ public class StringType extends Type{
 
 	}
 	
-	public String getCname() { return "String"; }
+	public String getCname() { return "char*"; }
 }

@@ -22,15 +22,15 @@ public class AssignExprStatement extends Statement {
 
     public void genC() {
       //System.out.println(this.left.getClass().getSimpleName());
-      if (this.right != null && this.right.getExprName() == "ReadString") {
+      if (this.right != null && this.right.getExprName().equals("ReadString")) {
     	  System.out.print("gets(");
     	  left.genC();
     	  System.out.println(");");
-      } else if (this.right != null && this.right.getExprName() == "ReadInt") {
+      } else if (this.right != null && this.right.getExprName().equals("ReadInt")) {
     	  System.out.print("scanf(\"%d\\n\", &");
     	  left.genC();
     	  System.out.println("); ");
-      } else if(this.left.getType().getTypeName() == "String") {
+      } else if(this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
     	  System.out.print("strcpy(");
     	  this.left.genC();
     	  System.out.print(",");

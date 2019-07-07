@@ -24,7 +24,7 @@ public class VarDecStat extends Statement{
 
     //genc
     public void genC(){
-        System.out.print(varDecStat.getType().getTypeName());
+        System.out.print(varDecStat.getType().getCname());
         System.out.print(" ");
         System.out.print(varDecStat.getId() + ";");
         System.out.println();

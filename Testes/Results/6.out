@@ -1,5 +1,4 @@
-mult
-Error at line 11: 
-  resultMult = mult();
+Error at line 7: 
+    num = true;
 Incompatible types in assignment
 java.lang.RuntimeException

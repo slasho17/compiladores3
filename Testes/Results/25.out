@@ -1,25 +1,23 @@
-recebeDado
-aqiu caraip{
 #include<stdio.h>
 #include<string.h>
-Int recebeDado( )
+int recebeDado()
 {
-Int num;
-Int numDois;
-String texto;
+int num;
+int numDois;
+char* texto = "\0";
 scanf("%d\n", &num); 
 scanf("%d\n", &numDois); 
 gets(texto);
 puts(texto);
 return (num * numDois);
 }
-void main( )
+void main()
 {
-Int result;
-Boolean logico;
-logico = 0;
+int result;
+int logico;
+logico = 1;
 while(logico) {
-result = recebeDado(;
+result = recebeDado();
 printf("%d\n", result);
 if((result == 0)) {
 logico = 0;

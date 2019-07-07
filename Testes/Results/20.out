@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<string.h>
-void main( )
+void main()
 {
-Int num;
-String texto;
+int num;
+char* texto = "\0";
 scanf("%d\n", &num); 
 gets(texto);
 }

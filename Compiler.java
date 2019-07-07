@@ -256,7 +256,7 @@ public class Compiler {
         // AssignExprStat ::= Expr [ "=" Expr] ";"
         Expr left = expr();
         Expr right = null;
-				if (left.getExprName() == "FuncCall"){
+				if (left.getExprName().equals("FuncCall")){
 					if(left.getType()!=null)//se a funÃ§Ã£o for tipada retorna true
 						error.signal("typed function needs variable to be assigned to");
 				}
@@ -352,7 +352,6 @@ public class Compiler {
         //System.out.println("returnStat");
         //ReturnStat ::= "return" Expr ";"
         currentFunction.setHasReturn();
-        System.out.println(currentFunction.getId());
         lexer.nextToken();
         Expr e = expr();
 
@@ -549,7 +548,7 @@ public class Compiler {
             error.signal("Boolean expected");
         }
 
-        boolean value = false;
+        String value = lexer.token.toString();
         lexer.nextToken();
 
         return new ExprLiteralBoolean(value);
@@ -606,7 +605,7 @@ public class Compiler {
                     break;
                 }
             }
-
+            
             if (lexer.token != Symbol.RIGHTPAR) {
                 error.signal(") expected");
             }

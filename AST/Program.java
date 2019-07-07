@@ -31,9 +31,9 @@ public class Program{
 			
 			for(Function f : this.arrayFunction){
 				if(f.getType() == null)
-					System.out.print("void " + f.getId() + "( " );
+					System.out.print("void " + f.getId() + "(" );
 				else
-					System.out.print(f.getType().getTypeName() + " " + f.getId() + "( " );
+					System.out.print(f.getType().getCname() + " " + f.getId() + "(" );
 				
 				
 				p = f.getParamList();
@@ -44,7 +44,7 @@ public class Program{
 	
 						if( length != 0){
 							
-							System.out.print(p.access(i).getType().getTypeName() + " "+ p.access(i).getId());
+							System.out.print(p.access(i).getType().getCname() + " "+ p.access(i).getId());
 	
 							if( i != p.size() - 1){
 								System.out.print(", ");

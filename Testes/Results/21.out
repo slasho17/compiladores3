@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<string.h>
-void main( )
+void main()
 {
-Int x;
-Int y;
-Int result;
+int x;
+int y;
+int result;
 printf("%s", "Correto semantico");
 result = (x + y);
 printf("%d\n", result);

@@ -1,5 +1,4 @@
-aqiu caraip{
-Error at line 7: 
-    num = true;
+Error at line 11: 
+  resultMult = mult();
 Incompatible types in assignment
 java.lang.RuntimeException

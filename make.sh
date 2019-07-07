@@ -2,4 +2,5 @@
 
 rm *.class
 rm */*.class
+
 javac Main.java

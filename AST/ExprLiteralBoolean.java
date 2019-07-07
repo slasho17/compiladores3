@@ -12,8 +12,8 @@ public class ExprLiteralBoolean extends Expr {
   //atributos:
   private String value;
 
-  public ExprLiteralBoolean(boolean par){
-    if( par == true){
+  public ExprLiteralBoolean(String par){
+    if( par.equals("true")){
       this.value = "1";
     }else{
       this.value = "0";

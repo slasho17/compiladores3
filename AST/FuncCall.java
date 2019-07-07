@@ -53,6 +53,8 @@ public class FuncCall extends Expr {
         }
       }
     }
+
+    System.out.print(")");
   }
 
 
