@@ -18,7 +18,7 @@ public class ReadString extends Expr {
       return "ReadString";
     }
     
-    public void genC(){
+    public void genC(PW pw){
 
     }
 }

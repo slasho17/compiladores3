@@ -36,12 +36,12 @@ public class CompositeExpr extends Expr {
     }
 
 
-    public void genC() {
-        System.out.print("(");
-        left.genC();
-        System.out.print(" " + oper.getCname() + " ");
-        right.genC();
-        System.out.print(")");
+    public void genC(PW pw) {
+        pw.out.print("(");
+        left.genC(pw);
+        pw.out.print(" " + oper.getCname() + " ");
+        right.genC(pw);
+        pw.out.print(")");
     }
 
 

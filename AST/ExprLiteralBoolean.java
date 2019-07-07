@@ -33,8 +33,8 @@ public class ExprLiteralBoolean extends Expr {
   }
 
   //genc
-  public void genC(){
-    System.out.print(getBooleanValue());
+  public void genC(PW pw){
+    pw.out.print(getBooleanValue());
   }
 
 }

@@ -18,7 +18,7 @@ public class ReadInt extends Expr {
       return "ReadInt";
     }
     
-    public void genC(){
+    public void genC(PW pw){
     	
     }
 }

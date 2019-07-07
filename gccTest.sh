@@ -13,9 +13,8 @@ then
     exit 1
 fi
 
-java Main Testes/$n_test.in > auxGccTest.c
+java Main Testes/$n_test.in auxGccTest.c
 
 gcc auxGccTest.c -o exGccTest
 ./exGccTest
 rm exGccTest
-rm auxGccTest.c

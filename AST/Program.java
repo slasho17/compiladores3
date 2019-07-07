@@ -21,19 +21,20 @@ public class Program{
 		}
 
 		//genc:
-		public void	genC(){
+		public void	genC(PW pw){
 
 
 			ParamList p;
 
-			System.out.println("#include<stdio.h>");
-			System.out.println("#include<string.h>");
+			pw.out.println("#include<stdio.h>");
+			pw.out.println("#include<string.h>");
+			pw.out.println("");
 			
 			for(Function f : this.arrayFunction){
 				if(f.getType() == null)
-					System.out.print("void " + f.getId() + "(" );
+					pw.out.print("void " + f.getId() + "(" );
 				else
-					System.out.print(f.getType().getCname() + " " + f.getId() + "(" );
+					pw.out.print(f.getType().getCname() + " " + f.getId() + "(" );
 				
 				
 				p = f.getParamList();
@@ -44,18 +45,21 @@ public class Program{
 	
 						if( length != 0){
 							
-							System.out.print(p.access(i).getType().getCname() + " "+ p.access(i).getId());
+							pw.out.print(p.access(i).getType().getCname() + " "+ p.access(i).getId());
 	
 							if( i != p.size() - 1){
-								System.out.print(", ");
+								pw.out.print(", ");
 							}
 						}
 					}
 				}
-				System.out.println(")");
-				System.out.println("{");
-				f.genC();
-				System.out.println("}");
+				pw.out.print(") ");
+				pw.out.println("{");
+				pw.add();
+				f.genC(pw);
+				pw.sub();
+				pw.out.println("}");
+				pw.out.println("");
 			}
 		}
 

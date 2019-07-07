@@ -33,20 +33,24 @@ public class IfStatement extends Statement{
     return this.elsePart;
   }
 
-  public void genC() {
-    System.out.print("if(");
-    this.expr.genC();
-    System.out.print(") ");
+  public void genC(PW pw) {
+    pw.print("if (");
+    this.expr.genC(pw);
+    pw.out.print(") ");
 
-    System.out.println("{");
-    this.thenPart.genC();
-    System.out.println("}");
+    pw.out.println("{");
+    pw.add();
+    this.thenPart.genC(pw);
+    pw.sub();
+    pw.println("}");
 
     if(this.elsePart != null){
-      System.out.println("else");
-      System.out.println("{");
-      this.elsePart.genC();
-      System.out.println("}");
+      pw.print("else ");
+      pw.out.println("{");
+      pw.add();
+      this.elsePart.genC(pw);
+      pw.sub();
+      pw.println("}");
     }
   }
 }

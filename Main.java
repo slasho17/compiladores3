@@ -3,7 +3,8 @@ Lucas Costa - 743563
 Luiz Felipe Guimarães - 743570
 Thiago Borges - 613770*/
 
-import AST.*; import java.io.*;
+import AST.*; 
+import java.io.*;
 
 public class Main {
 
@@ -16,9 +17,10 @@ public class Main {
     
         Program program;
     
-        if ( args.length != 1 ) {
-            System.out.println("Usage:\nMain input");
+        if ( args.length != 2) {
+            System.out.println("Usage:\nMain input output");
             System.out.println("input is the file to be compiled");
+            System.out.println("output is the file where the generated code will be stored");
         } else {
             file = new File(args[0]);
             if ( ! file.exists() || ! file.canRead() ) {
@@ -54,7 +56,17 @@ public class Main {
             }
             
             Compiler compiler = new Compiler();
-        
+            String outputFileName = args[1];
+            FileOutputStream outputStream;
+
+            try {
+                outputStream = new FileOutputStream(outputFileName);
+            } catch (IOException e) {
+                System.out.println("File " + args[1] + " was not found");
+                return;
+            }
+
+            PrintWriter printWriter = new PrintWriter(outputStream);
 
             program = null;
             // the generated code goes to a file and so does the errors
@@ -65,7 +77,10 @@ public class Main {
             }
 
             if ( program != null ) {
-                program.genC();
+                PW pw = new PW();
+                pw.set(printWriter);
+                program.genC(pw);
+                printWriter.close();
             }
         }
     }

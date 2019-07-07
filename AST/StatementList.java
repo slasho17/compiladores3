@@ -17,10 +17,10 @@ public class StatementList {
       this.v = v;
   }
 
-  public void genC(){
+  public void genC(PW pw){
 
     for( Statement s : this.v){
-      s.genC();
+      s.genC(pw);
     }
   }
 }

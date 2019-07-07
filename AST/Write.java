@@ -12,16 +12,16 @@ public class Write extends Statement {
       this.e = e;
     }
 
-    public void genC(){
+    public void genC(PW pw){
     	if(this.e.getType().getTypeName() != "String") {
-    		System.out.print("printf(\"%d\", ");
-    		this.e.genC();
-    		System.out.println(");");
+    		pw.print("printf(\"%d\", ");
+    		this.e.genC(pw);
+    		pw.out.println(");");
     	}
     	else{
-        		System.out.print("printf(\"%s\", ");
-        		this.e.genC();
-        		System.out.println(");");
+        		pw.print("printf(\"%s\", ");
+        		this.e.genC(pw);
+        		pw.out.println(");");
     	}
     }
 }
