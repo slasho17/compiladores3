@@ -37,12 +37,54 @@ public class CompositeExpr extends Expr {
 
 
     public void genC(PW pw) {
-        pw.out.print("(");
-        left.genC(pw);
-        pw.out.print(" " + oper.getCname() + " ");
-        right.genC(pw);
-        pw.out.print(")");
+      if (oper == Symbol.EQ && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+          pw.out.print("(strcmp(");
+          left.genC(pw);
+          pw.out.print(", ");
+          right.genC(pw);
+          pw.out.print(") == 0)");
+      }
+      else if (oper == Symbol.NEQ && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+          pw.out.print("(strcmp(");
+          left.genC(pw);
+          pw.out.print(", ");
+          right.genC(pw);
+          pw.out.print(") != 0)");
+      }
+      else if (oper == Symbol.LT && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+          pw.out.print("(strcmp(");
+          left.genC(pw);
+          pw.out.print(", ");
+          right.genC(pw);
+          pw.out.print(") == -1)");
+      }
+      else if (oper == Symbol.GT && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+          pw.out.print("(strcmp(");
+          left.genC(pw);
+          pw.out.print(", ");
+          right.genC(pw);
+          pw.out.print(") == 1)");
+      }
+      else if (oper == Symbol.LE && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+          pw.out.print("(strcmp(");
+          left.genC(pw);
+          pw.out.print(", ");
+          right.genC(pw);
+          pw.out.print(") != 1)");
+      }
+      else if (oper == Symbol.GE && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+          pw.out.print("(strcmp(");
+          left.genC(pw);
+          pw.out.print(", ");
+          right.genC(pw);
+          pw.out.print(") != -1)");
+      }
+      else{      
+          pw.out.print("(");
+          left.genC(pw);
+          pw.out.print(" " + oper.getCname() + " ");
+          right.genC(pw);
+          pw.out.print(")");
+      }
     }
-
-
 }

@@ -1,0 +1,10 @@
+function main{
+	var x : String;
+	var y : String;
+    if x == y{}
+    if x != y{}
+    if x <  y{}
+    if x <= y{}
+    if x >  y{}
+    if x >= y{}
+}

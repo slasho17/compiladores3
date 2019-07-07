@@ -5,7 +5,7 @@
 
 rm Results/*.out
 
-for i in {1..25}
+for i in {1..26}
 do
 	java Main Testes/$i.in Testes/Results/$i.c
 	echo ================== TESTE $i =======================
