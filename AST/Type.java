@@ -20,5 +20,6 @@ abstract public class Type {
 	public static Type stringType = new StringType();
 
 	public String getTypeName() { return this.nome; }
+	abstract public String getCname();
 
 }

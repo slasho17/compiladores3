@@ -23,10 +23,9 @@ public class VarDecStat extends Statement{
     }
 
     //genc
-    public void genC(){
-        System.out.print(varDecStat.getType().getTypeName());
-        System.out.print(" ");
-        System.out.print(varDecStat.getId() + ";");
-        System.out.println();
+    public void genC(PW pw){
+        pw.print(varDecStat.getType().getCname());
+        pw.out.print(" ");
+        pw.out.println(varDecStat.getId() + ";");
     }
 }

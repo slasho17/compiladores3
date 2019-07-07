@@ -20,30 +20,31 @@ public class AssignExprStatement extends Statement {
         this.right = right;
     }
 
-    public void genC() {
+    public void genC(PW pw) {
       //System.out.println(this.left.getClass().getSimpleName());
-      if (this.right != null && this.right.getExprName() == "ReadString") {
-    	  System.out.print("gets(");
-    	  left.genC();
-    	  System.out.println(");");
-      } else if (this.right != null && this.right.getExprName() == "ReadInt") {
-    	  System.out.print("scanf(\"%d\\n\", &");
-    	  left.genC();
-    	  System.out.println("); ");
-      } else if(this.left.getType().getTypeName() == "String") {
-    	  System.out.print("strcpy(");
-    	  this.left.genC();
-    	  System.out.print(",");
-    	  this.right.genC();
-    	  System.out.println(");");
+      if (this.right != null && this.right.getExprName().equals("ReadString")) {
+    	  pw.print("gets(");
+    	  left.genC(pw);
+    	  pw.out.println(");");
+      } else if (this.right != null && this.right.getExprName().equals("ReadInt")) {
+    	  pw.print("scanf(\"%d\\n\", &");
+    	  left.genC(pw);
+    	  pw.out.println("); ");
+      } else if(this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
+    	  pw.print("strcpy(");
+    	  this.left.genC(pw);
+    	  pw.out.print(",");
+    	  this.right.genC(pw);
+    	  pw.out.println(");");
       } else {
-    	  this.left.genC();
+        pw.print("");
+    	  this.left.genC(pw);
 
           if (this.right != null) {
-            System.out.print(" = ");
-            this.right.genC();
+            pw.out.print(" = ");
+            this.right.genC(pw);
           }   
-          System.out.println(';');  
+          pw.out.println(";");  
       }
     }
   }

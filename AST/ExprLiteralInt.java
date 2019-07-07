@@ -28,7 +28,7 @@ public class ExprLiteralInt extends Expr {
     return "ExprLiteralInt";
   }
 
-  public void genC(){
-    System.out.print(getIntValue());
+  public void genC(PW pw){
+    pw.out.print(getIntValue());
   }
 }

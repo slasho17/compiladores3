@@ -54,5 +54,15 @@ public enum Symbol {
     }
 
     public String toString() { return name; }
+
+    public String getCname() {
+        if (name.equals("or")) {
+            return "||";
+        } else if (name.equals("and")) {
+            return "&&";
+        } else {
+            return name;
+        }
+    }
     public String name;
 }

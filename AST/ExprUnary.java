@@ -19,12 +19,12 @@ public class ExprUnary extends Expr {
     this.e = e;
   }
 
-  public void genC(){
+  public void genC(PW pw){
     if (this.op != null) {
-      System.out.print(this.op.toString());
-      e.genC();
+      pw.out.print(this.op.toString());
+      e.genC(pw);
     }else
-      e.genC();
+      e.genC(pw);
   }
 
   public Type getType() {

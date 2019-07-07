@@ -33,7 +33,7 @@ public class ExprIdentifier extends Expr {
   }
 
   //genC()
-  public void genC() {
-    System.out.print(this.name);
+  public void genC(PW pw) {
+    pw.out.print(this.name);
   }
 }

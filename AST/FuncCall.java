@@ -40,19 +40,21 @@ public class FuncCall extends Expr {
   }
 
   //genc
-  public void genC(){
-    System.out.print(this.func.getId() + "(");
+  public void genC(PW pw){
+    pw.out.print(this.func.getId() + "(");
     
     int length = this.exprList.size();
     
     if(length != 0){
       for(int i = 0; i< length; i++){
-        exprList.get(i).genC();
+        exprList.get(i).genC(pw);
         if(i != length - 1){
-          System.out.print(",");
+          pw.out.print(",");
         }
       }
     }
+
+    pw.out.print(")");
   }
 
 

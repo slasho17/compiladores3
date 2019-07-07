@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<string.h>
-void main( )
+void main()
 {
-Int x;
-Int y;
+int x;
+int y;
+x = y;
 }

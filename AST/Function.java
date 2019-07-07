@@ -54,7 +54,7 @@ public class Function {
 		this.statList = statlist;
 	}
 
-  public void genC() {
-		this.statList.genC();
+  public void genC(PW pw) {
+		this.statList.genC(pw);
   }
 }

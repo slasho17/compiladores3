@@ -28,8 +28,8 @@ public class ExprLiteralString extends Expr {
     return "ExprLiteralString";
   }
 
-  public void genC(){
-    System.out.print("\"" + getStringValue() + "\"");
+  public void genC(PW pw){
+    pw.out.print("\"" + getStringValue() + "\"");
   }
 
 }

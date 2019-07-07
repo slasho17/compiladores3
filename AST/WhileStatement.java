@@ -29,12 +29,14 @@ public class WhileStatement extends Statement{
   }
 
   //genc
-  public void genC(){
-    System.out.print("while("); 
-    this.whileExpr.genC();
-    System.out.print(") ");
-    System.out.println("{");
-    this.whileStmt.genC();
-    System.out.println("}");
+  public void genC(PW pw){
+    pw.print("while("); 
+    this.whileExpr.genC(pw);
+    pw.out.print(") ");
+    pw.out.println("{");
+    pw.add();
+    this.whileStmt.genC(pw);
+    pw.sub();
+    pw.println("}");
   }
 }

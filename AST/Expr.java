@@ -7,7 +7,7 @@ package AST;
 
 abstract public class Expr {
     
-    abstract public void genC();
+    abstract public void genC(PW pw);
     abstract public Type getType();
     abstract public String getExprName();
 }

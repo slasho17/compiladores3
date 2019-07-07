@@ -22,9 +22,9 @@ public class ReturnStatement extends Statement{
   }
 
   //genc
-  public void genC(){
-    System.out.print( "return "); 
-    this.returnExpr.genC(); 
-    System.out.println(";");
+  public void genC(PW pw){
+    pw.print( "return "); 
+    this.returnExpr.genC(pw); 
+    pw.out.println(";");
   }
 }
