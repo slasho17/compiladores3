@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<string.h>
+
+void main() {
+    int x;
+    int y;
+    int result;
+    printf("%s", "Correto semantico");
+    result = (x + y);
+    printf("%d\n", result);
+    result = (x - y);
+    printf("%d\n", result);
+    result = (x * y);
+    printf("%d\n", result);
+    result = (x / y);
+    printf("%d\n", result);
+}
+
