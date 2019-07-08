@@ -27,7 +27,7 @@ public class AssignExprStatement extends Statement {
     	  left.genC(pw);
     	  pw.out.println(");");
       } else if (this.right != null && this.right.getExprName().equals("ReadInt")) {
-    	  pw.print("scanf(\"%d\\n\", &");
+    	  pw.print("scanf(\"%d\", &");
     	  left.genC(pw);
     	  pw.out.println("); ");
       } else if(this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {

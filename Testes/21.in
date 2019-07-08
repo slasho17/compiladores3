@@ -3,6 +3,9 @@ function main{
   var y:Int;
   var result:Int;
 
+  x = readInt()
+  y = readInt()
+
   write("Correto semantico");
 
   result = x + y;
