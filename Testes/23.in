@@ -81,7 +81,7 @@ function comparador(msgF : String, tipoComp : Boolean){
 		com = "Proibido";
 	}
 	if msgF == com{
-		write("Acertou");
+		writeln("Acertou");
 	}
 }
 

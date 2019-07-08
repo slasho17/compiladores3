@@ -56,28 +56,28 @@ public class CompositeExpr extends Expr {
           left.genC(pw);
           pw.out.print(", ");
           right.genC(pw);
-          pw.out.print(") == -1)");
+          pw.out.print(") == < 0)");
       }
       else if (oper == Symbol.GT && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
           pw.out.print("(strcmp(");
           left.genC(pw);
           pw.out.print(", ");
           right.genC(pw);
-          pw.out.print(") == 1)");
+          pw.out.print(") == > 0)");
       }
       else if (oper == Symbol.LE && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
           pw.out.print("(strcmp(");
           left.genC(pw);
           pw.out.print(", ");
           right.genC(pw);
-          pw.out.print(") != 1)");
+          pw.out.print(") != <= 0)");
       }
       else if (oper == Symbol.GE && this.left.getType() != null && this.left.getType().getTypeName().equals("String")) {
           pw.out.print("(strcmp(");
           left.genC(pw);
           pw.out.print(", ");
           right.genC(pw);
-          pw.out.print(") != -1)");
+          pw.out.print(") >= 0)");
       }
       else{      
           pw.out.print("(");

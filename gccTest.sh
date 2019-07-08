@@ -7,9 +7,9 @@
 
 n_test=$1
 
-if [ $n_test -lt 0 ] || [ $n_test -gt 25 ];
+if [ $n_test -lt 1 ] || [ $n_test -gt 25 ];
 then
-    echo "O argumento deve ser um valor entre 0 e 25"
+    echo "O argumento deve ser um valor entre 1 e 25"
     exit 1
 fi
 
